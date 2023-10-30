@@ -1,0 +1,24 @@
+.card-book {
+    position: relative !important;
+    height: 480px !important;
+}
+
+.card-book p, b {
+    text-align: left;
+    margin: 0px 10px 0px 10px;
+}
+
+.card-book b {
+    margin-top: 10px;
+}
+
+.img-book {
+    max-height: 250px;
+}
+
+.card-book button {
+    position: absolute !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    border-radius: 0 !important;
+}

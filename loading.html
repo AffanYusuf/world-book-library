@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Loading Page with Bootstrap Spinner</title>
+    <!-- Add Bootstrap CSS link here -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <!-- Loading screen -->
+    <div class="container text-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <!-- <span class="visually-hidden">Loading...</span> -->
+        </div>
+    </div>
+
+    <!-- Your main content (hidden during loading) -->
+    <div class="container main-content" style="display: none;">
+        <!-- Your content goes here -->
+        <h1>Welcome to My Website</h1>
+        <p>This is the main content of your page.</p>
+    </div>
+
+    <script>
+        // Simulate a delay (remove this in production)
+        setTimeout(function() {
+            // Hide the loading screen
+            document.querySelector('.container').style.display = 'none';
+            // Show the main content
+            document.querySelector('.main-content').style.display = 'block';
+        }, 3000); // Simulated delay of 3 seconds
+    </script>
+</body>
+</html>
