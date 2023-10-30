@@ -117,6 +117,7 @@ function getUsers() {
     .then(response => response.json())
     .then(data => {
         // Data is the parsed JSON object
+        console.log('data', data);
        return data;
     })
     .catch(error => {
