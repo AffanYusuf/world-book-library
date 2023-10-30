@@ -37,7 +37,7 @@ async function signin() {
     var result = searchByEmailAndPassword(email, password, users);
 
     if (result) {
-        sessionStorage.setItem("userSignIn", JSON.stringify(result));
+        sessionStorage.setItem("user-name", result.name);
         window.location.href = 'index.html';
     } else {
         document.querySelector('#signin-alert').style.display = 'block';
