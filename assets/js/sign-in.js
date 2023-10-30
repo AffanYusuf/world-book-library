@@ -125,8 +125,8 @@ async function  getUsers() {
     }
 }
 
-function signin() { 
-    const users = getUsers();
+async function signin() { 
+    const users = await getUsers();
     console.log('users', users);
 }
 $(document).ready(function() {
