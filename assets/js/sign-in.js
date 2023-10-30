@@ -112,17 +112,17 @@ particlesJS("particles-js", {
   
 });
 
-function getUsers() { 
-    fetch('./data/users.json') // Replace 'data.json' with the path to your JSON file
-    .then(response => response.json())
-    .then(data => {
+async function  getUsers() { 
+    try {
+        const response = await fetch('./data/users.json') // Replace 'data.json' with the path to your JSON file
+            ;
+        const data = await response.json();
         // Data is the parsed JSON object
         console.log('data', data);
-       return data;
-    })
-    .catch(error => {
+        return data;
+    } catch (error) {
         console.error('Error fetching JSON data:', error);
-    });
+    }
 }
 
 function signin() { 
