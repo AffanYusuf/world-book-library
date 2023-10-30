@@ -16,9 +16,16 @@
     max-height: 250px;
 }
 
-.card-book button {
+.card-book .div-btn {
+    width: 100%;
     position: absolute !important;
     bottom: 0 !important;
-    width: 100% !important;
+}
+
+.card-book .btn-borow {
+    border-radius: 0 !important;
+}
+
+.card-book .btn-read {
     border-radius: 0 !important;
 }

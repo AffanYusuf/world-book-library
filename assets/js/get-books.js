@@ -48,10 +48,23 @@ function fetchData() {
                     const statusBadge = document.createElement('label');
                     statusBadge.className = 'badge badge-success';
                     statusBadge.textContent = 'Open'; // Change to the relevant property of your data
+                    
+                    const userSignIn = sessionStorage.getItem("userSignIn");
+                    const buttonDiv = document.createElement('div');
+                    buttonDiv.className = 'div-btn';
 
                     const borrowButton = document.createElement('button');
-                    borrowButton.className = 'btn btn-info btn-raised';
+                    borrowButton.className = 'btn btn-danger btn-raised btn-borror';
                     borrowButton.textContent = 'Borrow';
+                    borrowButton.style.width = '49%';
+
+                    const readButton = document.createElement('a');
+                    readButton.className = 'btn btn-info btn-raised btn-read';
+                    readButton.textContent = 'Read';
+                    readButton.href = item.formats['text/html'];
+                    readButton.target = "_blank";
+                    readButton.style.width = '49%';
+                    if (!userSignIn) readButton.style.width = '100%';
 
                     const bookIdInput = document.createElement('input');
                     bookIdInput.type = 'hidden';
@@ -64,7 +77,9 @@ function fetchData() {
                     cardDiv.appendChild(cardTitle);
                     cardDiv.appendChild(cardText);
                     cardDiv.appendChild(statusLabel);
-                    cardDiv.appendChild(borrowButton);
+                    buttonDiv.appendChild(readButton);
+                    if (userSignIn) buttonDiv.appendChild(borrowButton);
+                    cardDiv.appendChild(buttonDiv);
                     cardDiv.appendChild(bookIdInput);
                     colDiv.appendChild(cardDiv);
                     dataContainer.appendChild(colDiv);

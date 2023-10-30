@@ -1,3 +1,49 @@
+async function  getUsers() { 
+    try {
+        const response = await fetch('./data/users.json') // Replace 'data.json' with the path to your JSON file
+            ;
+        const data = await response.json();
+        // Data is the parsed JSON object
+        console.log('data', data);
+        return data;
+    } catch (error) {
+        console.error('Error fetching JSON data:', error);
+    }
+}
+
+// Function untuk mencari berdasarkan email dan password
+function searchByEmailAndPassword(email, password, jsonData) {
+    // Membuat indeks berdasarkan email
+    var emailIndex = {};
+    jsonData.data.forEach(function(user) {
+        emailIndex[user.email] = user;
+    });
+
+    var user = emailIndex[email];
+    if (user && user.password === password) {
+        return user;
+    }
+    return null;
+}
+
+async function signin() { 
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+    console.log('email', email);
+    console.log('password', password);
+    const users = await getUsers();
+    console.log('users', users);
+
+    var result = searchByEmailAndPassword(email, password, users);
+
+    if (result) {
+        sessionStorage.setItem("userSignIn", result);
+        window.location.href = 'index.html';
+    } else {
+        document.querySelector('#signin-alert').style.display = 'block';
+    }
+}
+
 
 particlesJS("particles-js", {
     "particles": {
@@ -112,50 +158,6 @@ particlesJS("particles-js", {
   
 });
 
-async function  getUsers() { 
-    try {
-        const response = await fetch('./data/users.json') // Replace 'data.json' with the path to your JSON file
-            ;
-        const data = await response.json();
-        // Data is the parsed JSON object
-        console.log('data', data);
-        return data;
-    } catch (error) {
-        console.error('Error fetching JSON data:', error);
-    }
-}
-
-// Function untuk mencari berdasarkan email dan password
-function searchByEmailAndPassword(email, password, jsonData) {
-    // Membuat indeks berdasarkan email
-    var emailIndex = {};
-    jsonData.data.forEach(function(user) {
-        emailIndex[user.email] = user;
-    });
-
-    var user = emailIndex[email];
-    if (user && user.password === password) {
-        return user;
-    }
-    return null;
-}
-
-async function signin() { 
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
-    console.log('email', email);
-    console.log('password', password);
-    const users = await getUsers();
-    console.log('users', users);
-
-    var result = searchByEmailAndPassword(email, password, users);
-
-    if (result) {
-        console.log("User ditemukan. Nama: " + result.name + ", Role: " + result.role);
-    } else {
-        console.log("User tidak ditemukan.");
-    }
-}
 $(document).ready(function() {
     var _ParallaxHover = function(el) {
             // Set up handle

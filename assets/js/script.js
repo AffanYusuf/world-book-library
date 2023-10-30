@@ -1,6 +1,13 @@
 var big_image;
 
 $(document).ready(function() {
+  const userSignIn = sessionStorage.getItem("userSignIn");
+  if (userSignIn) {
+    document.querySelector('#nav-sign-in').style.display = 'none';
+    document.querySelector('#nav-sign-up').style.display = 'none';
+    document.querySelector('#nav-user').style.display = 'block';
+    document.querySelector('#nav-user').textContent = userSignIn.name;
+  }
   BrowserDetect.init();
 
   // Init Material scripts for buttons ripples, inputs animations etc, more info on the next link https://github.com/FezVrasta/bootstrap-material-design#materialjs
