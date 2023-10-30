@@ -46,8 +46,15 @@
                       <i class="material-icons">login</i> Sign In
                     </a>
                   </li>
-                  <li class="nav-item" id="nav-user" style="display: none;">
-                    
+                  <li class="dropdown nav-item" id="nav-user" style="display: none;">
+                    <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                        <i class="material-icons">account_circle</i> <b id="nav-user-text">Affan</b>
+                    </a>
+                    <div class="dropdown-menu dropdown-with-icons">
+                      <a href="index.html" class="dropdown-item" onclick="sessionStorage.clear()">
+                        <i class="material-icons">logout</i> Sign Out
+                      </a>
+                    </div>
                   </li>
                 </ul>
             </div>

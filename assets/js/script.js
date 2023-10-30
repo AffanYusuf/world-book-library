@@ -7,7 +7,7 @@ $(document).ready(function() {
     document.querySelector('#nav-sign-in').style.display = 'none';
     document.querySelector('#nav-sign-up').style.display = 'none';
     document.querySelector('#nav-user').style.display = 'block';
-    document.querySelector('#nav-user').textContent = userSignIn;
+    document.querySelector('#nav-user-text').textContent = userSignIn;
   }
   BrowserDetect.init();
 
