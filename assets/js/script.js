@@ -2,12 +2,13 @@ var big_image;
 
 $(document).ready(function() {
   const userSignIn = sessionStorage.getItem("userSignIn");
+  const dataUser = JSON.parse(userSignIn);
   console.log('userSignIn', userSignIn);
   if (userSignIn) {
     document.querySelector('#nav-sign-in').style.display = 'none';
     document.querySelector('#nav-sign-up').style.display = 'none';
     document.querySelector('#nav-user').style.display = 'block';
-    document.querySelector('#nav-user').textContent = userSignIn.name;
+    document.querySelector('#nav-user').textContent = dataUser.name;
   }
   BrowserDetect.init();
 
