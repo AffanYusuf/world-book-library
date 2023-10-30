@@ -3,7 +3,7 @@ var big_image;
 $(document).ready(function() {
   const userSignIn = sessionStorage.getItem("userSignIn");
   const dataUser = JSON.parse(userSignIn);
-  console.log('userSignIn', userSignIn);
+  console.log('dataUser', dataUser);
   if (userSignIn) {
     document.querySelector('#nav-sign-in').style.display = 'none';
     document.querySelector('#nav-sign-up').style.display = 'none';
