@@ -127,7 +127,7 @@ function getUsers() {
 
 function signin() { 
     const users = getUsers();
-    console.log(users);
+    console.log('users', users);
 }
 $(document).ready(function() {
     var _ParallaxHover = function(el) {
