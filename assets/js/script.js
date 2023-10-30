@@ -2,6 +2,7 @@ var big_image;
 
 $(document).ready(function() {
   const userSignIn = sessionStorage.getItem("userSignIn");
+  console.log('userSignIn', userSignIn);
   if (userSignIn) {
     document.querySelector('#nav-sign-in').style.display = 'none';
     document.querySelector('#nav-sign-up').style.display = 'none';
