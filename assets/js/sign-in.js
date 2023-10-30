@@ -125,9 +125,36 @@ async function  getUsers() {
     }
 }
 
+// Function untuk mencari berdasarkan email dan password
+function searchByEmailAndPassword(email, password, jsonData) {
+    // Membuat indeks berdasarkan email
+    var emailIndex = {};
+    jsonData.data.forEach(function(user) {
+        emailIndex[user.email] = user;
+    });
+
+    var user = emailIndex[email];
+    if (user && user.password === password) {
+        return user;
+    }
+    return null;
+}
+
 async function signin() { 
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+    console.log('email', email);
+    console.log('password', password);
     const users = await getUsers();
     console.log('users', users);
+
+    var result = searchByEmailAndPassword(email, password, users);
+
+    if (result) {
+        console.log("User ditemukan. Nama: " + result.name + ", Role: " + result.role);
+    } else {
+        console.log("User tidak ditemukan.");
+    }
 }
 $(document).ready(function() {
     var _ParallaxHover = function(el) {
