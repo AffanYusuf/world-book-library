@@ -37,7 +37,7 @@ async function signup() {
     const repoOwner = 'lolaanjals';
     const repoName = 'json-data';
     const filePath = 'users.json';
-    const accessToken = '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';
+    const accessToken = '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';
     
     // Fetch the current JSON data from the 'main' branch
     const response = await fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/contents/${filePath}`, {
