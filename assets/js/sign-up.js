@@ -34,13 +34,34 @@ async function signup() {
     console.log('new userJson',userJson);
 
 
-    // Write the modified data back to the JSON file
-    const updateJson = await fetch('./data/users.json', {
-        method: 'POST',
-        body: JSON.stringify(userJson),
-        headers: {
-            'Content-Type': 'application/json'
-        }
+    const repoOwner = 'affanyusuf';
+    const repoName = 'world-book-library';
+    const filePath = 'data/users.json';
+    const accessToken = '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';
+    
+    // Fetch the current JSON data from the 'master' branch
+    const response = await fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/contents/${filePath}`, {
+      method: 'GET',
+      headers: {
+        Authorization: `token ${accessToken}`,
+      },
     });
-    console.log('updateJson', updateJson);
+    const jsonContent = await response.json();
+    const currentSha = jsonContent.sha;
+
+    // Update the JSON file in the 'master' branch
+    await fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/contents/${filePath}`, {
+      method: 'PUT',
+      headers: {
+        Authorization: `token ${accessToken}`,
+      },
+      body: JSON.stringify({
+        branch: 'master', // Specify the 'master' branch
+        message: 'Update users.json',
+        content: btoa(JSON.stringify(userJson, null, 2)), // Encode as base64
+        sha: currentSha,
+      }),
+    });
+
+    console.log('JSON data has been updated in the repository.');
 }
