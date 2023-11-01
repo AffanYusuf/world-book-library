@@ -37,14 +37,14 @@ async function signup() {
     const repoOwner = 'affanyusuf';
     const repoName = 'world-book-library';
     const filePath = 'data/users.json';
-    const accessToken = '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';
+    const accessToken = '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';
     
     // Fetch the current JSON data from the 'master' branch
     const response = await fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/contents/${filePath}`, {
       method: 'GET',
-    //   headers: {
-    //     Authorization: `token ${accessToken}`,
-    //   },
+      headers: {
+        Authorization: `token ${accessToken}`,
+      },
     });
     const jsonContent = await response.json();
     console.log('jsonContent', jsonContent);
@@ -54,7 +54,7 @@ async function signup() {
     await fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/contents/${filePath}`, {
       method: 'PUT',
       headers: {
-        Authorization: `Bearer ${accessToken}`,
+        Authorization: `token ${accessToken}`,
       },
       body: JSON.stringify({
         branch: 'master', // Specify the 'master' branch
