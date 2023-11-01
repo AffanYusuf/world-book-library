@@ -42,19 +42,20 @@ async function signup() {
     // Fetch the current JSON data from the 'master' branch
     const response = await fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/contents/${filePath}`, {
       method: 'GET',
-      headers: {
-        Authorization: `token ${accessToken}`,
-      },
+    //   headers: {
+    //     Authorization: `token ${accessToken}`,
+    //   },
     });
     const jsonContent = await response.json();
+    console.log('jsonContent', jsonContent);
     const currentSha = jsonContent.sha;
 
     // Update the JSON file in the 'master' branch
     await fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/contents/${filePath}`, {
       method: 'PUT',
-      headers: {
-        Authorization: `token ${accessToken}`,
-      },
+    //   headers: {
+    //     Authorization: `token ${accessToken}`,
+    //   },
       body: JSON.stringify({
         branch: 'master', // Specify the 'master' branch
         message: 'Update users.json',
