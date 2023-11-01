@@ -34,24 +34,24 @@ async function signup() {
     console.log('new userJson',userJson);
 
 
-    const repoOwner = 'affanyusuf';
+    const repoOwner = 'lolaanjals';
     const repoName = 'json-data';
     const filePath = 'users.json';
-    const accessToken = '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';
+    const accessToken = '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';
     
-    // Fetch the current JSON data from the 'master' branch
+    // Fetch the current JSON data from the 'main' branch
     const response = await fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/contents/${filePath}`, {
       method: 'GET',
-    //   headers: {
-    //     Authorization: `token ${accessToken}`,
-    //   },
+      headers: {
+        Authorization: `token ${accessToken}`,
+      },
     });
     const jsonContent = await response.json();
     console.log('jsonContent', jsonContent);
     const currentSha = jsonContent.sha;
 
     const body = JSON.stringify({
-        branch: 'master', // Specify the 'master' branch
+        branch: 'main', // Specify the 'main' branch
         message: 'Update users.json',
         content: btoa(JSON.stringify(userJson, null, 2)), // Encode as base64
         sha: currentSha,
@@ -59,7 +59,7 @@ async function signup() {
 
     console.log('body', body);
 
-    // Update the JSON file in the 'master' branch
+    // Update the JSON file in the 'main' branch
     await fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/contents/${filePath}`, {
       method: 'PUT',
       headers: {
