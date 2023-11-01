@@ -36,7 +36,7 @@ async function signup() {
 
     // Write the modified data back to the JSON file
     const updateJson = await fetch('./data/users.json', {
-        method: 'PUT',
+        method: 'POST',
         body: JSON.stringify(userJson),
         headers: {
             'Content-Type': 'application/json'
