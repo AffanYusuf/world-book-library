@@ -11,41 +11,10 @@ async function  getUsers() {
     }
 }
 
-// Function untuk mencari berdasarkan email dan password
-function searchByEmailAndPassword(email, password, jsonData) {
-    // Membuat indeks berdasarkan email
-    var emailIndex = {};
-    jsonData.data.forEach(function(user) {
-        emailIndex[user.email] = user;
-    });
-
-    var user = emailIndex[email];
-    if (user && user.password === password) {
-        return user;
-    }
-    return null;
-}
-
-async function signin() { 
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
-    console.log('email', email);
-    console.log('password', password);
-    const users = await getUsers();
-    console.log('users', users);
-
-    var result = searchByEmailAndPassword(email, password, users);
-
-    if (result) {
-        sessionStorage.setItem("user-name", result.name);
-        window.location.href = 'index.html';
-    } else {
-        document.querySelector('#signin-alert').style.display = 'block';
-    }
-}
-
 async function signup() {
+    console.log('sign-up');
     const userJson = await getUsers();
+    console.log('userJson',userJson);
 
     // Modify the JSON data
     const userLength = userJson.data.length;
@@ -62,6 +31,8 @@ async function signup() {
         role: 'member',
     }
     userJson.data.push(newUser);
+    console.log('new userJson',userJson);
+
 
     // Write the modified data back to the JSON file
     fetch('./data/users.json', {
@@ -71,8 +42,6 @@ async function signup() {
             'Content-Type': 'application/json'
         }
     })
-    .then(() => {
-        return window.location.href = 'sign-in.html';
-    })
+    .then(() => console.log('success sign-up'))
     .catch(error => console.error('Error writing to data.json:', error));
 }
