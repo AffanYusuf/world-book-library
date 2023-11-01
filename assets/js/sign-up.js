@@ -37,7 +37,7 @@ async function signup() {
     const repoOwner = 'affanyusuf';
     const repoName = 'world-book-library';
     const filePath = 'data/users.json';
-    const accessToken = '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';
+    const accessToken = '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';
     
     // Fetch the current JSON data from the 'master' branch
     const response = await fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/contents/${filePath}`, {
