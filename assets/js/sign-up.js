@@ -35,13 +35,12 @@ async function signup() {
 
 
     // Write the modified data back to the JSON file
-    fetch('./data/users.json', {
+    const updateJson = await fetch('./data/users.json', {
         method: 'PUT',
         body: JSON.stringify(userJson),
         headers: {
             'Content-Type': 'application/json'
         }
-    })
-    .then(() => console.log('success sign-up'))
-    .catch(error => console.error('Error writing to data.json:', error));
+    });
+    console.log('updateJson', updateJson);
 }
