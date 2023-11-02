@@ -1,7 +1,14 @@
 
 async function signin() { 
+    document.querySelector('#signin-alert').style.display = 'none';
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
+    if (!email || !password) {
+      console.log('masuk');
+      document.querySelector('#signin-alert').textContent = 'Email or password cannot be empty!';
+      document.querySelector('#signin-alert').style.display = 'block';
+      return;
+    }
     const getUsers = localStorage.getItem('user-data');
     const users = JSON.parse(getUsers) || [];
     let result = false;
@@ -16,6 +23,7 @@ async function signin() {
         alert('Successfully sign in!');
         window.location.href = 'index.html';
     } else {
+        document.querySelector('#signin-alert').innerHTML = 'User not found.<br>Incorrect email or password.';
         document.querySelector('#signin-alert').style.display = 'block';
     }
 }
