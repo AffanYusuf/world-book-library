@@ -51,7 +51,7 @@
                         <i class="material-icons">account_circle</i> <b id="nav-user-text">Affan</b>
                     </a>
                     <div class="dropdown-menu dropdown-with-icons">
-                      <a href="index.html" class="dropdown-item" onclick="sessionStorage.clear()">
+                      <a href="#" class="dropdown-item" onclick="signout()">
                         <i class="material-icons">logout</i> Sign Out
                       </a>
                     </div>
@@ -212,6 +212,12 @@
             <div class="col-md-8 ml-auto mr-auto">
               <h2 class="text-center title">Join with us</h2>
               <h4 class="text-center description">Let's embark on new adventures within the pages of your book!</h4>
+              <div style="display: none;" class="alert alert-danger" role="alert" id="signup-alert">
+                <center>
+                  <b>The account with this email is already registered.</b><br>
+                  Please change the email to continue registration!
+                </center>
+              </div>
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
@@ -255,5 +261,6 @@
   <!-- partial -->
   <script  src="./assets/js/script.js"></script>
   <script  src="./assets/js/sign-up.js"></script>
+  <script  src="./assets/js/sign-out.js"></script>
 </body>
 </html>

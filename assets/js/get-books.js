@@ -6,6 +6,9 @@ function uniqueArray(array) {
     return array.filter(onlyUnique);
 }
 function fetchData() {
+    const userSignIn = sessionStorage.getItem("user-name");
+    if (userSignIn) document.querySelector('#sign-up').style.display = 'none';
+
     fetch('https://gutendex.com/books') // Replace with your API URL
         .then(response => response.json())
         .then(data => {
@@ -49,7 +52,6 @@ function fetchData() {
                     statusBadge.className = 'badge badge-success';
                     statusBadge.textContent = 'Open'; // Change to the relevant property of your data
                     
-                    const userSignIn = sessionStorage.getItem("user-name");
                     const buttonDiv = document.createElement('div');
                     buttonDiv.className = 'div-btn';
 
