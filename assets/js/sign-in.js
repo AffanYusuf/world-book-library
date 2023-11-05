@@ -22,7 +22,7 @@ async function signin() {
         const username = result.name || 'Admin';
         sessionStorage.setItem("user-name", username);
         alert('Successfully sign in!');
-        history.go(-1);
+        window.location.href = 'index.html';
     } else {
         document.querySelector('#signin-alert').innerHTML = 'User not found.<br>Incorrect email or password.';
         document.querySelector('#signin-alert').style.display = 'block';
