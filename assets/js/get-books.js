@@ -46,12 +46,6 @@ function fetchData() {
                         <strong>Authors:</strong> ${item.authors[0]?.name?.trim()}<br>
                         <strong>Genres:</strong> ${uniqueArray(genres).join(', ')}
                     `;
-
-                    const statusLabel = document.createElement('b');
-                    statusLabel.textContent = 'Status: ';
-                    const statusBadge = document.createElement('label');
-                    statusBadge.className = 'badge badge-success';
-                    statusBadge.textContent = 'Open'; // Change to the relevant property of your data
                     
                     const buttonDiv = document.createElement('div');
                     buttonDiv.className = 'div-btn';
@@ -84,11 +78,9 @@ function fetchData() {
                     bookIdInput.id = 'book_id';
                     bookIdInput.value = item.id; // Change to the relevant property of your data
 
-                    statusLabel.appendChild(statusBadge);
                     cardDiv.appendChild(img);
                     cardDiv.appendChild(cardTitle);
                     cardDiv.appendChild(cardText);
-                    cardDiv.appendChild(statusLabel);
                     buttonDiv.appendChild(readButton);
                     if (userSignIn) buttonDiv.appendChild(bookDetailButton);
                     cardDiv.appendChild(buttonDiv);
