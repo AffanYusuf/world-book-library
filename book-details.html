@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>World Book Library</title>
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/book-details.css">
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+  <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons">
+  <link rel="stylesgeet" href="https://rawgit.com/creativetimofficial/material-kit/master/assets/css/material-kit.css">
+</head>
+
+<body class="landing-page ">
+    <nav class="navbar fixed-top navbar-expand-sm"  color-on-scroll="100"  id="sectionsNav">
+        <div class="container">
+            <div class="navbar-translate">
+                <a class="navbar-brand" href="index.html"><b>World Book</b> Library </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                  <li class="dropdown nav-item">
+                    <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                        <i class="material-icons">apps</i> Services
+                    </a>
+                    <div class="dropdown-menu dropdown-with-icons">
+                      <a href="all-books.html#all-books-page" class="dropdown-item">
+                        <i class="material-icons">books</i> All Books
+                      </a>
+                    </div>
+                  </li>
+                  
+                  <li class="nav-item" id="nav-sign-up">
+                    <a class="nav-link" href="#sign-up">
+                      <b id>Sign Up</b>
+                    </a>
+                  </li>
+                  <li class="nav-item" id="nav-sign-in">
+                    <a class="nav-link" href="sign-in.html">
+                      <i class="material-icons">login</i> Sign In
+                    </a>
+                  </li>
+                  <li class="dropdown nav-item" id="nav-user" style="display: none;">
+                    <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                        <i class="material-icons">account_circle</i> <b id="nav-user-text">Affan</b>
+                    </a>
+                    <div class="dropdown-menu dropdown-with-icons">
+                      <a href="#" class="dropdown-item" onclick="signout()">
+                        <i class="material-icons">logout</i> Sign Out
+                      </a>
+                    </div>
+                  </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+   
+    <div class="main main-raised" id="main-book-details">
+    	<div class="container">
+        <div class="section">
+            <div class="row" id="book-detail-card">
+                <div class="col-md-12 loading-books">
+                    <center>
+                        <img src="./assets/images/loading-blue-spin.gif" alt="Loading..." width="100" height="100">
+                    </center>
+                </div>
+
+                <div style="display: none;" class="col-md-4" id="book-detail-content-1">
+                    <img id=book-detail-img src="" alt="">
+                </div>
+                <div style="display: none;" class="col-md-8" id="book-detail-content-2">
+                    <h3 id="book-detail-title"></h3>
+                    <br>
+                    <span id="book-description">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, cumque! Ex sed, aut sit officiis numquam deserunt? A at consequuntur architecto, dicta est cumque nesciunt perspiciatis accusantium et, veritatis nihil!
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam iste veniam incidunt reprehenderit pariatur ut recusandae itaque corporis, laudantium ad vitae inventore. Nemo error ipsa neque culpa consequatur voluptatem et.
+                    </span><br><br>
+                    <b>Authors:</b> <span id="book-detail-authors"></span><br>
+                    <b>Languages:</b> <span id="book-detail-languages"></span><br>
+                    <b>Bookshelves:</b> <span id="book-detail-bookshelves"></span><br>
+                    <b>Genres:</b> <span id="book-detail-genres"></span>
+                    <br>
+                    <div id="book-detail-button">
+                        <button id="book-detail-btn-read" class="btn btn-info btn-raised">Read Now</button>
+                        <button id="book-detail-btn-zip" class="btn btn-danger btn-raised">Download ZIP</button>
+                        <button id="book-detail-btn-epub" class="btn btn-success btn-raised">Download EPUB</button>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+      </div>
+    </div>
+    
+    <footer class="footer text-center">
+        <p>&copy; Copyright <b>World Book Library</b></p>
+    </footer>
+    
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js"></script>
+  <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js"></script>
+
+  <!-- partial -->
+  <script  src="./assets/js/script.js"></script>
+  <script  src="./assets/js/sign-out.js"></script>
+  <script  src="./assets/js/book-details.js"></script>
+</body>
+</html>

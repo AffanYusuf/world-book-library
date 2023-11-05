@@ -19,9 +19,10 @@ async function signin() {
       result = true;
     }
     if (result) {
-        sessionStorage.setItem("user-name", result.name);
+        const username = result.name || 'Admin';
+        sessionStorage.setItem("user-name", username);
         alert('Successfully sign in!');
-        window.location.href = 'index.html';
+        history.go(-1);
     } else {
         document.querySelector('#signin-alert').innerHTML = 'User not found.<br>Incorrect email or password.';
         document.querySelector('#signin-alert').style.display = 'block';

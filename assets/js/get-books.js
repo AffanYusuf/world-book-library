@@ -5,6 +5,7 @@ function onlyUnique(value, index, array) {
 function uniqueArray(array) {
     return array.filter(onlyUnique);
 }
+
 function fetchData() {
     const userSignIn = sessionStorage.getItem("user-name");
     if (userSignIn) document.querySelector('#sign-up').style.display = 'none';
@@ -42,8 +43,8 @@ function fetchData() {
                         }
                     });
                     cardText.innerHTML = `
-                        <strong>Authors:</strong>${item.authors[0].name.trim()}<br>
-                        <strong>Genres:</strong>${uniqueArray(genres).toString()}
+                        <strong>Authors:</strong> ${item.authors[0]?.name?.trim()}<br>
+                        <strong>Genres:</strong> ${uniqueArray(genres).join(', ')}
                     `;
 
                     const statusLabel = document.createElement('b');
@@ -55,18 +56,27 @@ function fetchData() {
                     const buttonDiv = document.createElement('div');
                     buttonDiv.className = 'div-btn';
 
-                    const borrowButton = document.createElement('button');
-                    borrowButton.className = 'btn btn-danger btn-raised btn-borror';
-                    borrowButton.textContent = 'Borrow';
-                    borrowButton.style.width = '49%';
+                    const bookDetailButton = document.createElement('a');
+                    bookDetailButton.className = 'btn btn-danger btn-raised btn-borror';
+                    bookDetailButton.textContent = 'More Details';
+                    bookDetailButton.style.width = '48%';
+                    bookDetailButton.href = `book-details.html?book_id=${item.id}`;
 
                     const readButton = document.createElement('a');
                     readButton.className = 'btn btn-info btn-raised btn-read';
                     readButton.textContent = 'Read';
-                    readButton.href = item.formats['text/html'];
+                    const readHref = userSignIn ? item.formats['text/html'] : '#';
+                    readButton.href = readHref;
                     readButton.target = "_blank";
-                    readButton.style.width = '49%';
-                    if (!userSignIn) readButton.style.width = '100%';
+                    readButton.style.width = '48%';
+
+                    if (!userSignIn) {
+                        readButton.style.width = '100%';
+                        readButton.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            alert('Please Sign In to Read and more!');
+                        });
+                    } 
 
                     const bookIdInput = document.createElement('input');
                     bookIdInput.type = 'hidden';
@@ -80,7 +90,7 @@ function fetchData() {
                     cardDiv.appendChild(cardText);
                     cardDiv.appendChild(statusLabel);
                     buttonDiv.appendChild(readButton);
-                    if (userSignIn) buttonDiv.appendChild(borrowButton);
+                    if (userSignIn) buttonDiv.appendChild(bookDetailButton);
                     cardDiv.appendChild(buttonDiv);
                     cardDiv.appendChild(bookIdInput);
                     colDiv.appendChild(cardDiv);

@@ -4,11 +4,11 @@ $(document).ready(function() {
   const userSignIn = sessionStorage.getItem("user-name");
   console.log('userSignIn', userSignIn);
   if (userSignIn) {
-    document.querySelector('#nav-sign-in').style.display = 'none';
-    document.querySelector('#nav-sign-up').style.display = 'none';
-    document.querySelector('#nav-user').style.display = 'block';
+    if(document.querySelector('#nav-sign-in')) document.querySelector('#nav-sign-in').style.display = 'none';
+    if(document.querySelector('#nav-sign-up')) document.querySelector('#nav-sign-up').style.display = 'none';
+    if(document.querySelector('#nav-user')) document.querySelector('#nav-user').style.display = 'block';
     document.querySelector('#nav-user-text').textContent = userSignIn;
-    document.querySelector('#sign-up').style.display = 'none';
+    if(document.querySelector('#sign-up')) document.querySelector('#sign-up').style.display = 'none';
   }
   BrowserDetect.init();
 

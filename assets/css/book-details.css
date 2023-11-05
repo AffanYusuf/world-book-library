@@ -1,0 +1,19 @@
+#main-book-details {
+    margin-top: 100px;
+}
+
+#book-detail-img {
+    width: 100%;
+}
+
+#book-detail-title {
+    color: #3C4858;
+    text-decoration: none;
+    font-weight: 700;
+    font-family: "Roboto Slab","Times New Roman",serif;
+}
+
+#book-detail-button {
+    position: absolute;
+    bottom: 0;
+}
