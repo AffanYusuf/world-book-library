@@ -1,5 +1,5 @@
 async function signup() {
-    document.querySelector('#signup-alert').style.display = 'none';
+    if(document.querySelector('#signup-alert')) document.querySelector('#signup-alert').style.display = 'none';
     const name = document.getElementById("sign-up-name").value;
     const email = document.getElementById("sign-up-email").value;
     const password = document.getElementById("sign-up-password").value;
