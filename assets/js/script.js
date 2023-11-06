@@ -151,11 +151,15 @@ materialKit = {
     if ($(document).scrollTop() > scroll_distance) {
       if (materialKit.misc.transparent) {
         materialKit.misc.transparent = false;
+        $('.navbar-color-on-scroll').removeClass('navbar-dark');
+        $('.navbar-color-on-scroll').addClass('navbar-light');
         $('.navbar-color-on-scroll').removeClass('navbar-transparent');
       }
     } else {
       if (!materialKit.misc.transparent) {
         materialKit.misc.transparent = true;
+        $('.navbar-color-on-scroll').removeClass('navbar-light');
+        $('.navbar-color-on-scroll').addClass('navbar-dark');
         $('.navbar-color-on-scroll').addClass('navbar-transparent');
       }
     }

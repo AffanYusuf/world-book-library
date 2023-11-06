@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title>World Book Library</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <link rel="stylesheet" href="./assets/css/style.css">
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
@@ -12,59 +14,53 @@
   <link rel="stylesgeet" href="https://rawgit.com/creativetimofficial/material-kit/master/assets/css/material-kit.css">
 </head>
 
-<body class="landing-page ">
-    <nav class="navbar navbar-color-on-scroll navbar-transparent fixed-top navbar-expand-sm"  color-on-scroll="100"  id="sectionsNav">
-        <div class="container">
-            <div class="navbar-translate">
-                <a class="navbar-brand" href="index.html"><b>World Book</b> Library </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                    <span class="navbar-toggler-icon"></span>
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            </div>
-            <div class="collapse navbar-collapse">
-                <ul class="navbar-nav ml-auto">
-                  <li class="dropdown nav-item">
-                    <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-                        <i class="material-icons">apps</i> Services
-                    </a>
-                    <div class="dropdown-menu dropdown-with-icons">
-                      <a href="all-books.html#all-books-page" class="dropdown-item">
-                        <i class="material-icons">books</i> All Books
-                      </a>
-                    </div>
-                  </li>
-                  
-                  <li class="nav-item" id="nav-sign-up">
-                    <a class="nav-link" href="#sign-up">
-                      <b id>Sign Up</b>
-                    </a>
-                  </li>
-                  <li class="nav-item" id="nav-sign-in">
-                    <a class="nav-link" href="sign-in.html">
-                      <i class="material-icons">login</i> Sign In
-                    </a>
-                  </li>
-                  <li class="dropdown nav-item" id="nav-user" style="display: none;">
-                    <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-                        <i class="material-icons">account_circle</i> <b id="nav-user-text">Affan</b>
-                    </a>
-                    <div class="dropdown-menu dropdown-with-icons">
-                      <a href="#" class="dropdown-item" onclick="signout()">
-                        <i class="material-icons">logout</i> Sign Out
-                      </a>
-                    </div>
-                  </li>
-                </ul>
-            </div>
-        </div>
+<body class="landing-page">
+    <nav class="navbar navbar-expand-md navbar-transparent navbar-dark navbar-color-on-scroll fixed-top"  color-on-scroll="100"  id="sectionsNav">
+      <a class="navbar-brand" href="index.html"><b>World Book</b> Library </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="dropdown nav-item">
+              <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                  <i class="material-icons">apps</i> Services
+              </a>
+              <div class="dropdown-menu dropdown-with-icons">
+                <a href="all-books.html#all-books-page" class="dropdown-item">
+                  <i class="material-icons">books</i> All Books
+                </a>
+              </div>
+            </li>
+            
+            <li class="nav-item" id="nav-sign-up">
+              <a class="nav-link" href="#sign-up">
+                <b id>Sign Up</b>
+              </a>
+            </li>
+            <li class="nav-item" id="nav-sign-in">
+              <a class="nav-link" href="sign-in.html">
+                <i class="material-icons">login</i> Sign In
+              </a>
+            </li>
+            <li class="dropdown nav-item" id="nav-user" style="display: none;">
+              <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                  <i class="material-icons">account_circle</i> <b id="nav-user-text">Affan</b>
+              </a>
+              <div class="dropdown-menu dropdown-with-icons">
+                <a href="#" class="dropdown-item" onclick="signout()">
+                  <i class="material-icons">logout</i> Sign Out
+                </a>
+              </div>
+            </li>
+          </ul>
+      </div>
     </nav>
     <div class="page-header header-filter" data-parallax="true" style=" background-image: url('https://png.pngtree.com/thumb_back/fw800/background/20230717/pngtree-sleek-and-contemporary-3d-render-of-modern-library-interior-image_3891765.jpg'); ">
         <div class="container">
             <div class="row">
     			<div class="col-md-6">
-    				<h1 class="title">Reading together, achieving great things</h1>
+    				<h2 class="title">Reading together, achieving great things</h2>
             <h4>
               Reading can help keep the brain functioning at its best. When reading, the brain is challenged to think, analyze various issues, seek solutions, and discover new things.
             </h4>
@@ -279,9 +275,11 @@
     </footer>
     
   <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js"></script>
   <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js"></script>
+
 
   <!-- partial -->
   <script  src="./assets/js/script.js"></script>

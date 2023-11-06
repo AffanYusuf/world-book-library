@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>World Book Library</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="./assets/css/style.css">
   <link rel="stylesheet" href="./assets/css/all-book.css">
 
@@ -14,51 +15,45 @@
 </head>
 
 <body class="landing-page ">
-    <nav class="navbar navbar-color-on-scroll navbar-transparent fixed-top navbar-expand-sm"  color-on-scroll="100"  id="sectionsNav">
-      <div class="container">
-          <div class="navbar-translate">
-              <a class="navbar-brand" href="index.html"><b>World Book</b> Library </a>
-              <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                  <span class="navbar-toggler-icon"></span>
-                  <span class="navbar-toggler-icon"></span>
-              </button>
-          </div>
-          <div class="collapse navbar-collapse">
-              <ul class="navbar-nav ml-auto">
-                <li class="dropdown nav-item">
-                  <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-                      <i class="material-icons">apps</i> Services
-                  </a>
-                  <div class="dropdown-menu dropdown-with-icons">
-                    <a href="all-books.html#all-books-page" class="dropdown-item">
-                      <i class="material-icons">books</i> All Books
-                    </a>
-                  </div>
-                </li>
-                
-                <li class="nav-item" id="nav-sign-up">
-                  <a class="nav-link" href="#sign-up">
-                    <b id>Sign Up</b>
-                  </a>
-                </li>
-                <li class="nav-item" id="nav-sign-in">
-                  <a class="nav-link" href="sign-in.html">
-                    <i class="material-icons">login</i> Sign In
-                  </a>
-                </li>
-                <li class="dropdown nav-item" id="nav-user" style="display: none;">
-                  <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-                      <i class="material-icons">account_circle</i> <b id="nav-user-text">Affan</b>
-                  </a>
-                  <div class="dropdown-menu dropdown-with-icons">
-                    <a href="#" class="dropdown-item" onclick="signout()">
-                      <i class="material-icons">logout</i> Sign Out
-                    </a>
-                  </div>
-                </li>
-              </ul>
-          </div>
+    <nav class="navbar navbar-expand-md navbar-transparent navbar-dark navbar-color-on-scroll fixed-top"  color-on-scroll="100"  id="sectionsNav">
+      <a class="navbar-brand" href="index.html"><b>World Book</b> Library </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="dropdown nav-item">
+              <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                  <i class="material-icons">apps</i> Services
+              </a>
+              <div class="dropdown-menu dropdown-with-icons">
+                <a href="all-books.html#all-books-page" class="dropdown-item">
+                  <i class="material-icons">books</i> All Books
+                </a>
+              </div>
+            </li>
+            
+            <li class="nav-item" id="nav-sign-up">
+              <a class="nav-link" href="#sign-up">
+                <b id>Sign Up</b>
+              </a>
+            </li>
+            <li class="nav-item" id="nav-sign-in">
+              <a class="nav-link" href="sign-in.html">
+                <i class="material-icons">login</i> Sign In
+              </a>
+            </li>
+            <li class="dropdown nav-item" id="nav-user" style="display: none;">
+              <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                  <i class="material-icons">account_circle</i> <b id="nav-user-text">Affan</b>
+              </a>
+              <div class="dropdown-menu dropdown-with-icons">
+                <a href="#" class="dropdown-item" onclick="signout()">
+                  <i class="material-icons">logout</i> Sign Out
+                </a>
+              </div>
+            </li>
+          </ul>
       </div>
     </nav>
     <div class="page-header header-filter" data-parallax="true" style=" background-image: url('https://png.pngtree.com/thumb_back/fw800/background/20230722/pngtree-3d-render-of-a-study-room-within-a-library-design-image_3771623.jpg'); ">
